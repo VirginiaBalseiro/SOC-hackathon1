@@ -21,3 +21,15 @@ for i in range(len(world)):
       count = count + 1
 
 print(count)
+
+#loop over the array and when you find a 1, check the tiles left, right, and below to see if they are also 1. If any of them indeed is 1, add +1 to count
+
+count = 0
+
+for i in range(len(world)):
+  for j in range (len(world[i])):
+    if world[i][j] ==1:
+        if world[i][(j+1)% len(world)] ==1 | world[(i+1)% len(world)][j] ==1 | world[(i+1)% len(world)][j-1] ==1 | world[(i+1)% len(world)][(j+1)% len(world)] ==1:
+            count = count + 1
+
+print(count)
